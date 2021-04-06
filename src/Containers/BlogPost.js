@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import moment from "moment";
 import Markdown from "markdown-to-jsx";
 import readingTime from "reading-time";
-import { GithubSelector, GithubCounter } from "react-reactions";
+import {  GithubCounter } from "react-reactions";
 import { userClient } from '../Utils/apollo'
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
@@ -13,7 +13,7 @@ import { getAuthenticatedUser } from '../Utils/auth'
 import { Loader } from "../Components/Common";
 import { PostContainer, PostTitle, PostDate, PostDateLink, PostReaction, BackButton } from "../Components/Post";
 import { AuthorDetails, AuthorAvatar, AuthorName } from "../Components/Post/Author";
-import { GithubLogin } from '../Components/Header'
+//import { GithubLogin } from '../Components/Header'
 import { HyperLink, CodeBlock } from '../Components/Markdown/Overrides';
 import CommentsSection from "./CommentsSection";
 
@@ -37,10 +37,7 @@ export default function BlogHome() {
         reactions(first:100){
           nodes{
             content
-            user{
-              id
-              login
-            }
+
           }
         }
         updatedAt
@@ -176,9 +173,10 @@ export default function BlogHome() {
               <div>
                 <AuthorName>{post.author.login}</AuthorName>
                 <PostDate>
-                  {moment(post.updatedAt).format("DD MMM YYYY")} .{readingTime(post.body).minutes} Min Read .
+                  {moment(post.updatedAt).format("DD MMM YYYY")} .{readingTime(post.body).minutes} MIN READ .
                   <PostDateLink href={post.url} target="_black">
-                    View On Github
+
+                    .
                   </PostDateLink>
                 </PostDate>
               </div>
@@ -200,10 +198,7 @@ export default function BlogHome() {
           </Markdown>
           {reactionPopup && (
             <PostReaction>
-              {userToken
-                ? <GithubSelector onSelect={emoji => toggleReaction(emoji)} />
-                : <GithubLogin isAbsolute={false} />
-              }
+
             </PostReaction>
           )}
           <GithubCounter

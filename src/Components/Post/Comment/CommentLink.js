@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const CommentLink = styled.a`
   outline: none;
-  border: 1px solid;
-  font-size: 22px;
+  border: 0px solid;
+  font-size: 0px;
   font-family: "Shadows Into Light", serif;
-  border-radius: 5px;
-  padding: 0px 20px 0 20px;
+  border-radius: 0px;
+  padding: 0px 0px 0 0px;
   cursor: pointer;
   position: relative;
   background-color: ${ props => props.theme.body };

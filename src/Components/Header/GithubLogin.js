@@ -14,12 +14,12 @@ const ButtonContainer = styled.div`
 `
 const Button = styled.button`
   -webkit-appearance: none;
-  background: linear-gradient(180deg, rgb(136, 220, 109) 0%, rgb(92, 168, 65) 100%);
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
   color: #FFF;
   border: none;
-  padding: 8px 16px;
-  font-size: 16px;
-  border-radius: 5px;
+  padding: 0px 0px;
+  font-size: 0px;
+  border-radius: 0px;
   cursor: pointer;
   transition: 0.2s;
   outline: 0;
@@ -31,7 +31,7 @@ const Button = styled.button`
 
 const Text = styled.span`
   color: #FFF;
-  font-size: 18px;
+  font-size: 0px;
 `
 
 export const GithubLogin = ({ isAbsolute }) => {
